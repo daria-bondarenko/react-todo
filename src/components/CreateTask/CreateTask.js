@@ -11,11 +11,10 @@ const CreateTask = ({setAllTasks, allTasks}) => {
       text: newTask,
       isCheck: false
     }).then(res => {
-      setAllTasks([
-        res.data
-      ]);
+      setAllTasks(
+        res.data.data
+      );
     });
-
     setNewTask('');
   };
 
@@ -24,10 +23,17 @@ const CreateTask = ({setAllTasks, allTasks}) => {
   };
 
   return (
-    <div>
-      <input type="text" value={newTask} name="task"
-             onChange={update} placeholder={'Write your task...'}/>
-      <button onClick={onAddClick}>Add</button>
+    <div className={classes.divAdd}>
+      <input type="text"
+             value={newTask}
+             name="task"
+             onChange={update}
+             placeholder={'Your task...'}
+             className={classes.inputAdd}/>
+      <button onClick={onAddClick}
+              className={classes.buttonAdd}>
+        Add
+      </button>
     </div>
   )
 }

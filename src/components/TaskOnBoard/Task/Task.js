@@ -10,9 +10,9 @@ const Task = ({item, allTasks, setAllTasks, setIsEdit, index}) => {
       _id: item._id,
       isCheck: !item.isCheck
     }).then(res => {
-      setAllTasks([
-        res.data
-      ]);
+      setAllTasks(
+        res.data.data
+      );
     });
   };
 
@@ -24,18 +24,28 @@ const Task = ({item, allTasks, setAllTasks, setIsEdit, index}) => {
   const onDeleteClick = async (e, index) => {
     await axios.delete(`http://localhost:4000/deleteTask`,
       {data: {_id: `${allTasks[index]._id}`}}).then(res => {
-      setAllTasks([
-        res.data
-      ]);
+      setAllTasks(
+        res.data.data);
     });
   };
 
   return (
     <div className={classes.task}>
-      <input type="checkbox" checked={item.isCheck} onChange={onChangeCheckbox}/>
-      <p>{item.text}</p>
-      <button onClick={(e) => onEditClick(e, index)}>edit</button>
-      <button onClick={(e) => onDeleteClick(e, index)}>delete</button>
+      <input type="checkbox"
+             checked={item.isCheck}
+             onChange={onChangeCheckbox}
+             className={classes.checkbox}/>
+      <p className={classes.taskText}>{item.text}</p>
+      <div className={classes.buttonContainer}>
+      <button onClick={(e) => onEditClick(e, index)}
+              className={classes.button}>
+        Edit
+      </button>
+      <button onClick={(e) => onDeleteClick(e, index)}
+              className={classes.button}>
+        Del
+      </button>
+      </div>
     </div>
   )
 };

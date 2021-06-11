@@ -11,16 +11,17 @@ const EditTask = ({allTasks, setAllTasks, setIsEdit, item, index}) => {
   };
 
   const onDoneClick = async () => {
-    setIsEdit(null);
 
     await axios.patch('http://localhost:4000/editTask', {
       _id: item._id,
       text: editTask
     }).then(res => {
-      setAllTasks([
-        res.data
-      ]);
+      setAllTasks(
+        res.data.data
+      );
     });
+
+    setIsEdit(null);
   };
 
   const onCancelClick = (e, index) => {
@@ -28,10 +29,20 @@ const EditTask = ({allTasks, setAllTasks, setIsEdit, item, index}) => {
   };
 
   return (
-    <div>
-      <input type="text" value={editTask} onChange={update}/>
-      <button onClick={(e) => onDoneClick()}>yes</button>
-      <button onClick={onCancelClick}>no</button>
+    <div className={classes.task}>
+      <input type="text" value={editTask}
+             onChange={update}
+             className={classes.inputEdit}/>
+      <div className={classes.buttonContainer}>
+      <button onClick={(e) => onDoneClick()}
+              className={classes.button}>
+        Yes
+      </button>
+      <button onClick={onCancelClick}
+              className={classes.button}>
+        No
+      </button>
+      </div>
     </div>
   )
 };

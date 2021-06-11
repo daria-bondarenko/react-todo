@@ -20,8 +20,8 @@ const TaskOnBoard = ({allTasks, setAllTasks}) => {
         };
 
         return isEdit === index
-          ? (<EditTask {...props}/>)
-          : (<Task {...props}/>)
+          ? (<EditTask {...props} className={classes.taskContainer}/>)
+          : (<Task {...props} className={classes.taskContainer}/>)
       }
     )
   )

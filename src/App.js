@@ -9,15 +9,18 @@ function App() {
 
   const [allTasks, setAllTasks] = useState([]);
 
-  useEffect(async () => {
-    await axios.get('http://localhost:4000/allTasks').then(res => {
-      setAllTasks(res.data.data);
-    });
-  })
+  const getAllTasks = async () => {
+    const res = await axios.get("http://localhost:4000/allTasks");
+    setAllTasks(res.data.data);
+  }
+
+  useEffect(() => {
+    getAllTasks();
+  }, [])
 
   return (
     <div className="App">
-      <h1>ToDo List</h1>
+      <h1 className="title">ToDo List</h1>
       <CreateTask setAllTasks={setAllTasks} allTasks={allTasks}/>
       <TaskOnBoard setAllTasks={setAllTasks} allTasks={allTasks}/>
     </div>

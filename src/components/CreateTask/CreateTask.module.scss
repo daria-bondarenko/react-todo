@@ -1,0 +1,56 @@
+.divAdd {
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputAdd {
+  height: 45px;
+  padding: 0 5px;
+  margin: 0 20px 0 0;
+  font-family: monospace;
+  font-size: 1.5rem;
+  border: 2px solid #80abf3;
+  border-radius: 5px;
+  outline: none;
+  color: #3b4793;
+}
+
+.inputAdd:focus {
+  border: 2px solid #4b5ccd;
+}
+
+.buttonAdd {
+  width: 40%;
+  height: 49px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background: #80abf3;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.buttonAdd:hover {
+  background: #4b5ccd;
+}
+
+@media (max-width: 860px) {
+
+  .divAdd {
+    flex-direction: column;
+  }
+
+  .inputAdd {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .buttonAdd {
+    margin: auto;
+  }
+
+}
+

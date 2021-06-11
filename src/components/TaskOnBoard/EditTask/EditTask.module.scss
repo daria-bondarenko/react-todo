@@ -1,0 +1,52 @@
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.inputEdit {
+  font-size: 2rem;
+  width: calc(80% + 37px + 2rem);
+  word-break: break-all;
+  color: #80abf3;
+  font-family: monospace;
+  border: 2px solid #80abf3;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  margin: 0 0 1rem 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+}
+
+.button {
+  border: none;
+  background: #80abf3;
+  color: white;
+  min-width: 45px;
+  height: 45px;
+  border-radius: 3px;
+  font-size: 1rem;
+  margin: 0 0 0 1rem;
+}
+
+@media (max-width: 860px) {
+  .task {
+    flex-direction: column;
+    margin: 1rem auto;
+    align-items: center;
+  }
+
+  .buttonContainer {
+    width: 7rem;
+  }
+
+  .button {
+    margin: 0;
+  }
+
+}
