@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import classes from "./EditTask.module.scss";
 import axios from "axios";
 
-const EditTask = ({allTasks, setAllTasks, setIsEdit, item, index}) => {
+const EditTask = ({setAllTasks, setIsEdit, item}) => {
 
   const [editTask, setEditTask] = useState(item.text);
 
@@ -24,7 +24,7 @@ const EditTask = ({allTasks, setAllTasks, setIsEdit, item, index}) => {
     setIsEdit(null);
   };
 
-  const onCancelClick = (e, index) => {
+  const onCancelClick = () => {
     setIsEdit(null);
   };
 

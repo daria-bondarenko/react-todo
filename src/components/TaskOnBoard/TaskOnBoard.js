@@ -8,17 +8,14 @@ const TaskOnBoard = ({allTasks, setAllTasks}) => {
   const [isEdit, setIsEdit] = useState(null);
 
   return (
-    allTasks?.map((item, index) => {
-
+    allTasks.length && allTasks.map((item, index) => {
         const props = {
           key: `key-${index}`,
-          allTasks: allTasks,
           setAllTasks: setAllTasks,
           setIsEdit: setIsEdit,
           item: item,
           index: index
         };
-
         return isEdit === index
           ? (<EditTask {...props} className={classes.taskContainer}/>)
           : (<Task {...props} className={classes.taskContainer}/>)

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import './App.css';
+import './App.scss';
 import CreateTask from "./components/CreateTask/CreateTask";
 import TaskOnBoard from "./components/TaskOnBoard/TaskOnBoard";
 import axios from "axios";
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="title">ToDo List</h1>
-      <CreateTask setAllTasks={setAllTasks} allTasks={allTasks}/>
+      <CreateTask setAllTasks={setAllTasks}/>
       <TaskOnBoard setAllTasks={setAllTasks} allTasks={allTasks}/>
     </div>
   );

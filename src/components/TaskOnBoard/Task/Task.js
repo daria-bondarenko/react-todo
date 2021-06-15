@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import classes from './Task.module.scss';
 import axios from "axios";
 
-const Task = ({item, allTasks, setAllTasks, setIsEdit, index}) => {
+const Task = ({item, setAllTasks, setIsEdit, index}) => {
 
   const onChangeCheckbox = async () => {
 
@@ -18,16 +18,12 @@ const Task = ({item, allTasks, setAllTasks, setIsEdit, index}) => {
 
   const onEditClick = (e, index) => {
     setIsEdit(index);
-    console.log('lol');
   };
 
-  const onDeleteClick = async (e, index) => {
-    await axios.delete(`http://localhost:4000/deleteTask`,
-      {data: {_id: `${allTasks[index]._id}`}}).then(res => {
-      setAllTasks(
-        res.data.data);
-    });
-  };
+  const onDeleteClick = async () => {
+    const res = await axios.delete(`http://localhost:4000/deleteTask?_id=${item._id}`);
+      setAllTasks(res.data.data)
+    }
 
   return (
     <div className={classes.task}>
