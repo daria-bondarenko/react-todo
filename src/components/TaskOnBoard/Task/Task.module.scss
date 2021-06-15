@@ -1,0 +1,60 @@
+.task {
+  display: flex;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.checkbox {
+  width: 45px;
+  height: 45px;
+  margin: 0 0 0 1rem;
+}
+
+.taskText {
+  font-size: 2rem;
+  width: 80%;
+  word-break: break-all;
+  margin: 0.2rem 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+}
+
+.button {
+  border: none;
+  background: #80abf3;
+  color: white;
+  min-width: 45px;
+  height: 45px;
+  border-radius: 3px;
+  font-size: 1rem;
+  margin: 0 0 0 1rem;
+}
+
+@media (max-width: 860px) {
+  .task {
+    flex-direction: column;
+    margin: 1rem auto;
+    align-items: center;
+  }
+
+  .checkbox {
+    margin: 0;
+  }
+
+  .taskText {
+    margin: 0.2rem 0;
+    width: auto;
+  }
+
+  .buttonContainer {
+    width: 7rem;
+  }
+
+  .button {
+    margin: 0;
+  }
+}

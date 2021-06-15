@@ -1,0 +1,16 @@
+body {
+  font-family: monospace;
+  display: flex;
+  padding: 0;
+  margin: 5px 5px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  margin: auto;
+  width: 85%;
+}
